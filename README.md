@@ -1,4 +1,4 @@
 # Texas News & Weather
-new of Texas 
+news of Texas 
 most current news
 upTo date weather
