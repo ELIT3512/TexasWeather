@@ -1,18 +1,11 @@
-require("dotenv").config();
-const fetch = require("node-fetch")
-const weahterKey = process.env.weahterKey;
-console.log("weatherKey: ",weahterKey);
-
-    async function texasApi(){
-        let url =`htts & query = Texas`;
-        try{
-            const res = await fetch(url);
-            const data = await res.json();
-            console.log("data",data);
-        }catch(err){
-        console.log(err);
-        }
-        console.log("data",data);
-    }
-
-texasApi()
+    import {texasApi} from "./weather.js";
+    import {NewsApi} from "./new.js";
+    document.addEventListener("DOMContentLoaded",function(){
+        let buttonE = document.getElementById("infoClick");
+        let infoE = document.getElementById("info");
+        buttonE.addEventListener("click",function(){
+            texasApi();
+            NewsApi();
+            infoE.style.display="block"
+        })
+    })
